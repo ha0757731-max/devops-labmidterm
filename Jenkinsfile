@@ -46,8 +46,9 @@ pipeline {
 
     post {
         always {
-            echo "Pipeline finished for Student FA23-BDS-015"
-            // We will add the actual email code later once you configure SMTP
+            mail to: 'qasimalik@gmail.com',
+                 subject: "Jenkins Build - FA23-BDS-015 - ${currentBuild.currentResult}",
+                 body: "The pipeline for Student FA23-BDS-015 finished with status: ${currentBuild.currentResult}."
         }
     }
 }
